@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание сайта - Индивидуальный проект</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    <style>
+        /* CSS анимации для JavaScript эффектов */
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Титульная страница -->
+    <section id="title-page" class="title-page">
+        <div class="title-container">
+            <h1>Создание веб-сайта</h1>
+            <p class="subtitle">Индивидуальный проект по информатике</p>
+            
+            <div class="project-info">
+                <div class="author-card">
+                    <div class="card-icon">👨‍💻</div>
+                    <h3>Автор проекта:</h3>
+                    <p>Косивцов Фёдор Викторович</p>
+                    <p>9Б класс</p>
+                </div>
+                
+                <div class="supervisor-card">
+                    <div class="card-icon">👩‍🏫</div>
+                    <h3>Куратор проекта:</h3>
+                    <p>Курдя Светлана Евгеньевна</p>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p>Этот сайт является одновременно и проектом, и инструкцией по его созданию.</p>
+                <p>Изучите основы веб-разработки: HTML, CSS и JavaScript</p>
+            </div>
+
+            <button class="start-btn" onclick="startProject()">Начать изучение</button>
+        </div>
+    </section>
+
+    <!-- Основной контент (изначально скрыт) -->
+    <div id="main-content" class="main-content hidden">
+        <header>
+            <h1>Как создавался этот сайт</h1>
+            <p>Простое руководство для начинающих</p>
+        </header>
+
+        <nav>
+            <a href="#title-page" onclick="showTitlePage()">Титульная</a>
+            <a href="#step1">Инструменты</a>
+            <a href="#step2">Структура</a>
+            <a href="#step3">HTML5</a>
+            <a href="#step4">CSS3</a>
+            <a href="#step5">JavaScript</a>
+            <a href="#step6">Тестирование</a>
+            <a href="#step7">Деплой</a>
+            <a href="#playground">🎮 Песочница</a>
+        </nav>
+
+        <main>
+            <!-- Существующие секции остаются без изменений -->
+            <section id="step1" class="code-example">
+                <h2>Шаг 1: Установка и настройка инструментов</h2>
+                <p>Для создания сайта тебе понадобятся бесплатные инструменты, которые установит любой начинающий разработчик.</p>
+                
+                <div class="explanation">
+                    <p>📥 <strong>Что нужно установить:</strong></p>
+                    <ul>
+                        <li><strong>Visual Studio Code</strong> - скачай с официального сайта code.visualstudio.com</li>
+                        <li><strong>Расширение Live Server</strong> - найди в магазине расширений VS Code</li>
+                        <li><strong>Любой современный браузер</strong> - Chrome, Firefox или Edge</li>
+                    </ul>
+                </div>
+
+                <pre><code>// После установки VS Code:
+// 1. Создай новую папку для проекта
+// 2. Открой её в VS Code (Файл → Открыть папку)
+// 3. Создай файл index.html</code></pre>
+
+                <div class="demo-box">
+                    🎯 Нажми меня! Узнаешь полезный совет по настройке
+                </div>
+            </section>
+
+            <section id="step2" class="code-example">
+                <h2>Шаг 2: Создание базовой HTML-структуры</h2>
+                <p>Каждый сайт начинается с HTML-файла. Это каркас твоего будущего сайта.</p>
+                
+                <div class="explanation">
+                    <p>📝 <strong>Создай файл index.html с таким кодом:</strong></p>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это мой первый сайт.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>💡 <strong>Что означает этот код:</strong></p>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> - говорит браузеру, что это HTML5</li>
+                        <li><code>&lt;html lang="ru"&gt;</code> - корневой элемент с указанием языка</li>
+                        <li><code>&lt;head&gt;</code> - служебная информация (не видна на странице)</li>
+                        <li><code>&lt;body&gt;</code> - видимое содержимое страницы</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="step3" class="code-example">
+                <h2>Шаг 3: Добавление стилей с помощью CSS</h2>
+                <p>CSS делает твой сайт красивым. Создай файл style.css и подключи его к HTML.</p>
+
+                <div class="explanation">
+                    <p>🎨 <strong>Создай файл style.css:</strong></p>
+                    <pre><code>/* Основные стили для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Стили для заголовка */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Стили для параграфа */
+p {
+    color: #666;
+    font-size: 18px;
+}</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>🔗 <strong>Подключи CSS к HTML:</strong></p>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это мой первый сайт.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="step4" class="code-example">
+                <h2>Шаг 4: Добавление интерактивности с JavaScript</h2>
+                <p>JavaScript делает сайт "живым". Создай файл script.js для добавления интерактивных элементов.</p>
+
+                <div class="explanation">
+                    <p>⚡ <strong>Создай файл script.js:</strong></p>
+                    <pre><code>// Этот код выполнится при загрузке страницы
+console.log("Сайт загружен!");
+
+// Добавим реакцию на клик по заголовку
+document.querySelector('h1').addEventListener('click', function() {
+    this.style.color = this.style.color === 'red' ? '#333' : 'red';
+});
+
+// Функция для показа сообщения
+function showMessage() {
+    alert('Привет от JavaScript!');
+}</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>🔗 <strong>Подключи JavaScript к HTML:</strong></p>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это мой первый сайт.&lt;/p&gt;
+    &lt;button onclick="showMessage()"&gt;Нажми меня&lt;/button&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="demo-box">
+                    🎯 Нажми меня! Увидишь, как работает JavaScript
+                </div>
+            </section>
+
+            <section id="step5" class="code-example">
+                <h2>Шаг 5: Создание адаптивного дизайна</h2>
+                <p>Современные сайты должны хорошо выглядеть на всех устройствах - от компьютеров до телефонов.</p>
+
+                <div class="explanation">
+                    <p>📱 <strong>Добавь в style.css медиа-запросы:</strong></p>
+                    <pre><code>/* Базовые стили для больших экранов */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Для планшетов */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Для телефонов */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+}</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>🔄 <strong>Обнови HTML для адаптивности:</strong></p>
+                    <pre><code>&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+        &lt;p&gt;Этот сайт адаптируется под любой размер экрана.&lt;/p&gt;
+        &lt;button onclick="showMessage()"&gt;Нажми меня&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="step6" class="code-example">
+                <h2>Шаг 6: Запуск и тестирование сайта</h2>
+                <p>После написания кода нужно проверить, как сайт работает в браузере.</p>
+
+                <div class="explanation">
+                    <p>🚀 <strong>Как запустить сайт:</strong></p>
+                    <ul>
+                        <li>Открой папку с проектом в VS Code</li>
+                        <li>Установи расширение <strong>Live Server</strong></li>
+                        <li>Кликни правой кнопкой на index.html</li>
+                        <li>Выбери "Open with Live Server"</li>
+                        <li>Сайт откроется в браузере на http://localhost:5500</li>
+                    </ul>
+                </div>
+
+                <div class="explanation">
+                    <p>🧪 <strong>Что тестировать:</strong></p>
+                    <ul>
+                        <li>Открывается ли сайт в разных браузерах</li>
+                        <li>Корректно ли отображается на телефоне (F12 → Toggle device toolbar)</li>
+                        <li>Работают ли все кнопки и ссылки</li>
+                        <li>Не появляются ли ошибки в консоли (F12 → Console)</li>
+                    </ul>
+                </div>
+
+                <div class="demo-box">
+                    🎯 Нажми меня! Проверим твои знания
+                </div>
+            </section>
+
+            <section id="step7" class="code-example">
+                <h2>Шаг 7: Публикация сайта в интернете</h2>
+                <p>Готовый сайт можно разместить в интернете бесплатно.</p>
+
+                <div class="explanation">
+                    <p>🌐 <strong>Бесплатные хостинги для начинающих:</strong></p>
+                    <ul>
+                        <li><strong>GitHub Pages</strong> - для проектов на GitHub</li>
+                        <li><strong>Netlify</strong> - простой деплой перетаскиванием</li>
+                        <li><strong>Vercel</strong> - для современных веб-проектов</li>
+                        <li><strong>GitLab Pages</strong> - альтернатива GitHub</li>
+                    </ul>
+                </div>
+
+                <div class="explanation">
+                    <p>📦 <strong>Как опубликовать на GitHub Pages:</strong></p>
+                    <ol>
+                        <li>Создай аккаунт на GitHub.com</li>
+                        <li>Создай новый репозиторий</li>
+                        <li>Загрузи файлы проекта (index.html, style.css, script.js)</li>
+                        <li>В настройках репозитория найди "Pages"</li>
+                        <li>Выбери ветку main и сохрани</li>
+                        <li>Через пару минут твой сайт будет доступен по адресу: username.github.io/repository-name</li>
+                    </ol>
+                </div>
+
+                <div class="explanation">
+                    <p>🎯 <strong>Что ты научился делать:</strong></p>
+                    <ul>
+                        <li>✅ Создавать HTML-структуру сайта</li>
+                        <li>✅ Оформлять сайт с помощью CSS</li>
+                        <li>✅ Добавлять интерактивность JavaScript</li>
+                        <li>✅ Делать адаптивный дизайн</li>
+                        <li>✅ Тестировать и публиковать сайт</li>
+                    </ul>
+                </div>
+
+                <div class="demo-box">
+                    🎉 Поздравляю! Теперь ты можешь создавать свои сайты!
+                </div>
+            </section>
+
+            <section id="playground" class="code-example">
+                <h2>🎮 Песочница: Поэкспериментируй с кодом</h2>
+                <p>Здесь ты можешь практиковаться и сразу видеть результат:</p>
+                
+                <div class="live-editor">
+                    <div class="editor-tabs">
+                        <button class="tab-active" data-tab="html">HTML</button>
+                        <button data-tab="css">CSS</button>
+                        <button data-tab="js">JavaScript</button>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <div class="code-panel html-panel active">
+                            <textarea class="code-input" id="html-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Мой эксперимент&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это моя первая веб-страница.&lt;/p&gt;
+    &lt;button onclick="showMessage()"&gt;Нажми меня&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                        </div>
+                        
+                        <div class="code-panel css-panel">
+                            <textarea class="code-input" id="css-code">body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #ffd43b;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+button {
+    background: #4cc9f0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}</textarea>
+                        </div>
+                        
+                        <div class="code-panel js-panel">
+                            <textarea class="code-input" id="js-code">function showMessage() {
+    alert('Ура! JavaScript работает! 🎉');
+    
+    // Меняем цвет заголовка при клике
+    const h1 = document.querySelector('h1');
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    h1.style.color = randomColor;
+}
+
+// Добавляем обработчик для параграфа
+document.addEventListener('DOMContentLoaded', function() {
+    const p = document.querySelector('p');
+    if (p) {
+        p.addEventListener('click', function() {
+            this.style.fontSize = this.style.fontSize === '1.5em' ? '1.2em' : '1.5em';
+        });
+    }
+});</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-controls">
+                        <button id="run-code" class="run-btn">▶ Запустить код</button>
+                        <button id="reset-code" class="reset-btn">🔄 Сбросить</button>
+                        <button id="save-project" class="save-btn">💾 Сохранить проект</button>
+                    </div>
+                    
+                    <div class="preview-container">
+                        <h3>Результат:</h3>
+                        <iframe id="preview-frame" class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Индивидуальный проект. Косивцов Фёдор, 9Б класс</p>
+            <p>Куратор: Курдя Светлана Евгеньевна</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
